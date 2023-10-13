@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Leave horker?</title>
+    <style>
+        body {
+            background-color: #50514d;
+        }
+		.image-container {
+			width: 100vw;
+			height: 100vh;
+			overflow:hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		.image-container img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+		}
+        .image-container button {
+            position: absolute;
+            visibility: visible;
+            width: 100px;
+            height: 80px;
+            transform: translate(-50%, -50%);
+            left: 55%;
+            top: 55%;
+			background-color:transparent;
+			border: none;
+        }
+    </style>
+</head>
+<body>
+	<div class="image-container">
+		<img id="currentPhoto" src="images/image.jpg">
+		<button onclick="boop(); console.log('attempting to play sound')"></button>
+	</div>
+
+	<script>
+		function boop() {
+			var audio = new Audio("noseboop.wav");
+			audio.play();
+            var image = document.getElementById('currentPhoto')
+            image.src = "images/booped.jpg";
+			setTimeout(function () {
+                var image = document.getElementById('currentPhoto')
+                image.src = "images/image.jpg";
+			}, 100)
+		}
+	</script>
+</body>
+</html>
